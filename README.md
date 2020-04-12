@@ -23,4 +23,28 @@ scrapy 2.0.1
 scrapy startproject url_scrapy
 
 cd url_scrapy
+
+
+scrapy genspider springer_spider link.springer.com
+
+
+scrapy crawl springer_spider
+
+
 pipenv run
+
+
+exec.sh
+
+```
+#!/bin/bash
+
+cd /home/th4/projects/tys-hiroshi/url-spyder/url_scrapy
+pipenv shell
+scrapy crawl springer_spider
+```
+
+chmod 755 exec.sh
+
+
+30 22 * * *   th4 /bin/bash /home/th4/projects/tys-hiroshi/url-spyder/exec.sh >> /home/th4/projects/tys-hiroshi/url-spyder/log/cron.log
